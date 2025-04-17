@@ -1,69 +1,78 @@
-# Lead Prioritization Tool
+# 📞 Prioritization of Calls
 
-## Project Overview
-This tool analyzes customer lead data to prioritize sales calls and maximize signup potential. It processes three key datasets (leads, previous calls, and historical signups) to build a prediction model that identifies the most promising leads for future outreach.
+## 🧠 Project Overview
 
-## Features
-- Data cleaning and preprocessing of customer lead information
+This tool analyzes customer lead data to prioritize sales calls and **maximize signup potential**. It integrates and processes three key datasets—leads, previous calls, and historical signups—to build a machine learning model that identifies the most promising leads for outreach.
+
+## ✨ Features
+
+- Preprocessing and cleaning of customer lead data
 - Analysis of historical call outcomes and signup rates
-- Machine learning model to predict signup probability based on demographic and behavioral data
-- Prioritized list generation of top leads to call for maximum conversion
+- Machine learning model to predict signup probability using demographic and behavioral features
+- Automatic generation of a prioritized lead list for maximum conversion potential
 
-## Data Structure
-The project works with three primary datasets:
-1. **Leads** (`leads.csv`):
-   - Contains potential customer information with fields for Name, Phone Number, Region, Sector, and Age
-   
-2. **Calls** (`calls.csv`):
-   - Records of previous call attempts with Phone Number, Call Outcome, Agent, and Call Number
-   
-3. **Signups** (`signups.csv`):
-   - Records of which leads converted to signups and their approval decisions
+## 🗂️ Data Structure
 
-## Workflow
-1. Data loading and cleaning
-2. Feature engineering from demographic data
-3. Identification of contacted vs. uncontacted leads
-4. Merge of lead and call history data
-5. Analysis of last call per lead
-6. Correlation with signup data
-7. Machine learning model training using scikit-learn
-8. Prediction of signup probability for uncontacted leads
-9. Generation of top 1000 leads to call
+This project works with three primary datasets:
 
-## Dependencies
+1. **Leads** (`leads.csv`)
+   - Fields: `Name`, `Phone Number`, `Region`, `Sector`, `Age`
+
+2. **Calls** (`calls.csv`)
+   - Fields: `Phone Number`, `Call Outcome`, `Agent`, `Call Number`
+
+3. **Signups** (`signups.csv`)
+   - Fields: `Phone Number`, `Signup Status`, `Approval Decision`
+
+## 🔁 Workflow
+
+1. Load and clean input datasets
+2. Engineer features from demographic and behavioral data
+3. Identify contacted vs. uncontacted leads
+4. Merge lead and call history data
+5. Analyze last call outcome per lead
+6. Join with signup data
+7. Train predictive model using scikit-learn
+8. Predict signup probability for uncontacted leads
+9. Output the top 1,000 leads to call next
+
+## 📦 Dependencies
+
 - Python 3.x
-- pandas
-- scikit-learn
-- numpy
-- Jupyter Notebook
+- `pandas`
+- `numpy`
+- `scikit-learn`
+- `Jupyter Notebook`
 
-## Installation
+## ⚙️ Installation
+
 ```bash
 # Clone the repository
 git clone https://github.com/yourusername/lead-prioritization-tool.git
 
-# Navigate to the project directory
+# Navigate into the project directory
 cd lead-prioritization-tool
 
-# Install required packages
+# Install the required dependencies
 pip install -r requirements.txt
 ```
 
-## Usage
-1. Place your CSV data files in the project directory:
-   - leads.csv
-   - calls.csv
-   - signups.csv
+## ▶️ Usage
 
-2. Run the Jupyter notebook:
-```bash
-jupyter notebook top1000_leads_tocall.ipynb
-```
+1. Add your data files to the project directory:
+   - `leads.csv`
+   - `calls.csv`
+   - `signups.csv`
 
-3. The notebook will process the data and output a prioritized list of leads to call
+2. Launch the Jupyter notebook:
+   ```bash
+   jupyter notebook top1000_leads_tocall.ipynb
+   ```
 
-## Project Structure
+3. Run the notebook to process the data and generate the prioritized list of leads to call.
+
+## 📁 Project Structure
+
 ```
 lead-prioritization-tool/
 ├── README.md
@@ -74,20 +83,24 @@ lead-prioritization-tool/
 └── signups.csv
 ```
 
-## Notes on Data Processing
-- The code filters out leads with unrealistic age values (Age > 100)
-- For contacted leads, it focuses on the most recent call outcome
-- Feature encoding uses one-hot encoding for categorical variables (Region, Sector)
-- The model is trained on a stratified split to handle potential class imbalance in signup data
+## 📝 Notes on Data Processing
 
-## Future Improvements
-- Add model evaluation metrics and performance tracking
-- Implement feature importance analysis to better understand conversion factors
-- Add a time-series component to account for seasonal trends
-- Create a web interface for non-technical users
+- Filters out unrealistic entries (e.g., `Age > 100`)
+- For contacted leads, only the **most recent call** is used
+- Categorical features (e.g., `Region`, `Sector`) are encoded using one-hot encoding
+- Stratified train-test split is used to handle potential class imbalance
 
-## License
-[MIT](https://choosealicense.com/licenses/mit/)
+## 🚀 Future Improvements
 
-## Contributing
-Contributions are welcome! Please feel free to submit a Pull Request.
+- Add evaluation metrics (AUC, precision-recall, etc.)
+- Analyze feature importance to understand key conversion drivers
+- Incorporate time-series trends for seasonal modeling
+- Build a simple web interface for non-technical users
+
+## 🪪 License
+
+[MIT License](https://choosealicense.com/licenses/mit/)
+
+## 🤝 Contributing
+
+Contributions are welcome! Feel free to open an issue or submit a pull request.
