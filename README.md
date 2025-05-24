@@ -2,7 +2,7 @@
 
 ## 🧠 Project Overview
 
-This tool analyzes customer lead data to prioritize sales calls and **maximize signup potential**. It integrates and processes three key datasets—leads, previous calls, and historical signups—to build a machine learning model that identifies the most promising leads for outreach.
+This projects analyzes customer lead data to prioritize sales calls and **maximize signup potential**. It integrates and processes three key datasets—leads, previous calls, and historical signups—to build a machine learning model that identifies the most promising leads for outreach.
 
 ## ✨ Features
 
